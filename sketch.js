@@ -70,7 +70,7 @@ else
 {
 	options=
 	{
-		restitution:0.9,
+		restitution:0.3,
 		isStatic:true
 	}
 }
