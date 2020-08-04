@@ -58,7 +58,21 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
-if (keyCode === DOWN_ARROW) {
+keyPressed(); 
+
+
+
+  
+ packageSprite.x= packageBody.position.x 
+ packageSprite.y= packageBody.position.y 
+ packageSprite.velocityX=packageBody.velocityX;
+  Matter.Engine.update(engine);
+  drawSprites();
+ 
+}
+
+function keyPressed() {
+	if (keyCode === DOWN_ARROW) {
     // Look at the hints in the document and understand how to make the package body fall only on
 	options=
 	{
@@ -74,18 +88,6 @@ else
 		isStatic:true
 	}
 }
-
-
-  
- packageSprite.x= packageBody.position.x 
- packageSprite.y= packageBody.position.y 
- packageSprite.velocityX=packageBody.velocityX;
-  Matter.Engine.update(engine);
-  drawSprites();
- 
-}
-
-function keyPressed() {
  
 }
 
