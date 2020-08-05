@@ -40,6 +40,11 @@ function setup() {
 
 	engine = Engine.create();
 	world = engine.world;
+	options=
+	{
+		restitution:0.3,
+		isStatic:true
+	}
 
 	packageBody = Bodies.circle(packageSprite.position.x , 200 , 5 , options);
 	packageSprite.y=helicopterSprite.y
@@ -58,8 +63,6 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
-keyPressed(); 
-
 
 
   
@@ -73,22 +76,9 @@ keyPressed();
 
 function keyPressed() {
 	if (keyCode === DOWN_ARROW) {
-    // Look at the hints in the document and understand how to make the package body fall only on
-	options=
-	{
-		restitution:0.3,
-		isStatic:false
+		// Look at the hints in the document and understand how to make the package body fall only on
+		Matter.Body.setStatic(packageBody, false);
 	}
-}
-else
-{
-	options=
-	{
-		restitution:0.3,
-		isStatic:true
-	}
-}
- 
 }
 
 
